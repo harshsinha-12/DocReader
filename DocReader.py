@@ -2,7 +2,7 @@ import streamlit as st
 from langchain.llms import OpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.embeddings import OpenAIEmbeddings
-from langchain.vectorstores import Chromadb
+from langchain.vectorstores import Chroma
 from langchain.chains import RetrievalQA
 
 def generate_response(uploaded_file, openai_api_key, query_text):
@@ -43,4 +43,7 @@ with st.form('myform', clear_on_submit=True):
             del openai_api_key
 
 if len(result):
-    st.info(response)
+    st.info(result[0])  # Display the first result if there are any
+else:
+    st.info('No results to display.')
+

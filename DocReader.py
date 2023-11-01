@@ -46,4 +46,6 @@ if len(result):
     st.info(result[0])  # Display the first result if there are any
 else:
     st.info('No results to display.')
+    
+st.info('May not run as ChromaDB no longer compatible.')
 
